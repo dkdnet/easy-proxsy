@@ -1,10 +1,13 @@
 const chalk = require("chalk");
 const path = require('path');
 const express = require('express');
+const cors = require('cors')
 const proxy = require("http-proxy-middleware");
 const CONST = require('./config/constant.json');
 const app = express();
+app.use(cors());
 const router = express.Router();
+
 
 
 // 处理代理
@@ -27,6 +30,24 @@ if(CONST.proxy) {
         }
     });
 }
+
+//
+// router.all('*', function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+//     res.header("X-Powered-By",' 3.2.1')
+//     res.header("Content-Type", "application/json;charset=utf-8");
+//     next();
+// });
+router.all('*', function(req, res, next) {
+    // 设置跨域访问
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    // pass
+});
 
 app.use(router);
 
