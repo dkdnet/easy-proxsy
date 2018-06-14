@@ -21,7 +21,8 @@ if (CONST.proxy) {
                 changeOrigin: true,
                 ws: true,                         // proxy websockets
                 pathRewrite: {
-                    '^/api/' : '/'           // remove base path
+                    '^/api/' : '/',           // remove base path
+                    '^/dl/' : '/'           // remove base path
                 },
                 headers: (typeof element.headers !== 'undefined' ? element.headers : {}),
                 onProxyRes: function (proxyRes) {

@@ -4,12 +4,14 @@ const proxyConfig = [
         enable: true,
         router: "/api/*",
         headers: {"X-XSS": "X-XSS"},
-        url: "http://localhost:8000"
+        //url: "http://172.168.3.141:8080"
+        url: "http://47.104.68.10:8080"
+
     },
     {
         enable: true,
-        router: ["/profile/*"],
-        url: "http://localhost:3000"
+        router: ["/dl/*"],
+        url: "http://115.28.67.214:8080"
     },
     {
         enable: false,
