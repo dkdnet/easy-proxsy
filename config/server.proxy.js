@@ -11,7 +11,9 @@ const proxyConfig = [
     {
         enable: true,
         router: ["/dl/*"],
-        url: "http://115.28.67.214:8080"
+        //url: "http://115.28.67.214:8080"
+        url: "http://localhost:4444"
+
     },
     {
         enable: false,
