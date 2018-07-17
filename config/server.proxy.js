@@ -5,7 +5,9 @@ const proxyConfig = [
         router: "/api/*",
         headers: {"X-XSS": "X-XSS"},
         //url: "http://172.168.3.141:8080"
-        url: "http://47.104.68.10:8080"
+        // url: "http://47.104.68.10:8080"
+        // url: "http://172.168.3.60:8080"
+        url: "http://47.93.179.52:8080"
 
     },
     {
